@@ -4,4 +4,5 @@ How to ...
 2. use <sup> tag for superscript.
 3. square root and division symbol.
 4. footer tag.
-5.
+5. embed picture in button tag with CSS
+6. using absolute positioning to better control element when in fixed position
