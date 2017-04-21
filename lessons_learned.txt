@@ -1,0 +1,7 @@
+How to ...
+
+1. add art work with responsive design.
+2. use <sup> tag for superscript.
+3. square root and division symbol.
+4. footer tag.
+5.
