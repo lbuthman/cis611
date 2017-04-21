@@ -41,3 +41,47 @@ body {
     background-color: #C3C2AB;
     font-size: 250%;
 }
+
+#buttons {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    position: absolute;
+    display: inline-block;
+    width: 320px;
+    height: auto;
+    margin-top: -30px;
+    margin-left: 15px;
+}
+
+button {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    border: none;
+    background-color: #FFF001;
+    margin: 0 10px 4px 6px;
+    height: 40px;
+    width: 50px;
+    box-shadow: 0 3px 0 0 #222121, inset -1px -3px 10px 1px #515151;
+}
+
+#equalButton {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -131px;
+    height: 171px;
+    background: url("art/80s-bw-pattern.jpeg");
+}
+
+.blue {
+    background-color: #00E6FE;
+}
+
+.ops {
+    background-color: #99FC20;
+}
+
+.red {
+    background-color: #FD1999;
+}
