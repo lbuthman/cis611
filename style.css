@@ -1,0 +1,43 @@
+body {
+    background-color: #00E6FE;
+    font-family: 'Shrikhand', cursive;
+}
+
+#calculator {
+    height: 410px;
+    width: 300px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #A10EEC;
+    border: 2px solid #908B85;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    box-shadow: 1px 10px 34px 7px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px #89847E;
+}
+
+#brand {
+    font-family: 'Faster One', cursive;
+    font-size: 200%;
+    margin-top: -10%;
+    margin-bottom: -10%;
+}
+
+#brand img {
+    height: 8%;
+    width: 8%;
+}
+
+#result {
+    width: 85%;
+    height: 65px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #B4B39D;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #C3C2AB;
+    font-size: 250%;
+}
