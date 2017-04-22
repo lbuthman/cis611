@@ -12,6 +12,7 @@ body {
     margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 1%;
     background-color: #A10EEC;
     border: 2px solid #908B85;
     -webkit-border-radius: 20px;
@@ -27,6 +28,7 @@ body {
     font-size: 200%;
     margin-top: -10%;
     margin-bottom: -10%;
+    text-align: center;
 }
 
 #brand img {
@@ -39,6 +41,7 @@ body {
     height: 65px;
     margin-left: auto;
     margin-right: auto;
+    text-align: right;
     border: 2px solid #B4B39D;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -68,9 +71,9 @@ button {
     margin: 0 10px 4px 6px;
     height: 40px;
     width: 50px;
-    -webkit-box-shadow: 0 2px 0 0 #222121, inset -1px -3px 2px 1px #515151;
-    -moz-box-shadow: 0 2px 0 0 #222121, inset -1px -3px 2px 1px #515151;
-    box-shadow: 0 2px 0 0 #222121, inset -1px -3px 2px 1px #515151;
+    -webkit-box-shadow: 0 2px 0 0 #222121, inset -1px -2px 2px 1px #515151;
+    -moz-box-shadow: 0 2px 0 0 #222121, inset -1px -2px 2px 1px #515151;
+    box-shadow: 0 2px 0 0 #222121, inset -1px -2px 2px 1px #515151;
 }
 
 button:active {
