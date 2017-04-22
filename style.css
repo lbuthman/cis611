@@ -18,9 +18,9 @@ body {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    -webkit-box-shadow: 1px 6px 15px 7px #222121, inset -1px -3px 22px 0.1px #89847E;
-    -moz-box-shadow: 1px 6px 15px 7px #222121, inset -1px -3px 22px 0.1px #89847E;
-    box-shadow: 1px 6px 15px 7px #222121, inset -1px -3px 22px 0.1px #89847E;
+    -webkit-box-shadow: 1px 1px 10px 4px #FFFFFF;
+    -moz-box-shadow: 1px 1px 10px 4px #FFFFFF;
+    box-shadow: 1px 1px 10px 4px #FFFFFF;
 }
 
 #brand {
