@@ -1,0 +1,26 @@
+- a calculator has buttons and a "screen" to display output
+- buttons can be operands (with a special decimal operand) or operators (with a special equals operator)
+    - operands construct values (integers, decimal)
+    - operators alter operands to produce results
+    - results are calculating with "equals" operator or //
+        operator entered, operand entered, operator entered, operand entered (result produced)
+- the default operand is 0
+- a new operand is constructed as operand buttons are pressed, until an operator is selected or
+    a MAX_DIGITS has been reached
+- the special operand (.) results in an error if pressed twice (pressed while true) -->
+    an error message is displayed temporarily and then the previous valid operand is shown
+- check for divide by 0 error
+- check for negative square root error
+- square root should show (if not too difficult) +-
+- "hi" produces 07734
+- handle really big and really small numbers
+
+Process
+
+1. get operands and display
+2. validate operands (MAX_DIGITS, leading zero, double decimal)
+3. implement clear buttons "CE" "AC"
+4. implement basic version of Equals, returns current value of operand
+5. implement addition
+6. implement subtraction
+...
