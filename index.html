@@ -10,66 +10,66 @@
     <script type="text/javascript" src="://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div id="calculator">
+<div class="container">
+    <div id="calculator">
 
-            <!-- result interface -->
-            <div id="brand" class="text-center">
-                <h5><img src="art/lightning-icon.png" alt="Lightening Bolt"/>
-                    Calc-Ya-Later!
-                    <img src="art/lightning-icon.png" alt="Lightening Bolt"/>
-                </h5>
-            </div>
-            <div id="interface" class="text-right">
-                <p id="result">0</p>
-            </div>
-            <!-- END result interface -->
-
-            <!-- buttons input -->
-            <div id="buttons">
-
-                <button class="ops" value="**">x<sup>2</sup></button>
-                <button class="ops" value="*">x</button>
-                <button class="ops" value="+">+</button>
-                <button class="red" value="ac">AC</button>
-
-                <button class="ops" value="Math.sqrt()">&#8730</button>
-                <button class="ops" value="/">&divide;</button>
-                <button class="ops" value="-">-</button>
-                <button class="red" value="C">C</button>
-
-                <button value="7">7</button>
-                <button value="8">8</button>
-                <button value="9">9</button>
-                <button class="invisible">N</button>
-
-                <button value="4">4</button>
-                <button value="5">5</button>
-                <button value="6">6</button>
-                <button class="invisible">N</button>
-
-                <button value="1">1</button>
-                <button value="2">2</button>
-                <button value="3">3</button>
-                <button class="invisible">N</button>
-
-                <button class="blue" value="07734">hi!</button>
-                <button value="0">0</button>
-                <button class="blue" value=".">.</button>
-                <button id="equalButton" value="="></button>
-
-            </div>
-            <!-- END buttons input -->
+        <!-- result interface -->
+        <div id="brand" class="text-center">
+            <h5><img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/lightning-icon.png" alt="Lightening Bolt"/>
+                Calc-Ya-Later!
+                <img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/lightning-icon.png" alt="Lightening Bolt"/>
+            </h5>
         </div>
-        <!-- END calculator -->
+        <div id="interface" class="text-right">
+            <p id="result">0</p>
+        </div>
+        <!-- END result interface -->
+
+        <!-- buttons input -->
+        <div id="buttons">
+
+            <button class="operator green" value="**">x<sup>2</sup></button>
+            <button class="operator green" value="*">x</button>
+            <button class="operator green" value="+">+</button>
+            <button class="clear red" value="AC">AC</button>
+
+            <button class="operator green" value="Math.sqrt()">&#8730</button>
+            <button class="operator green" value="/">&divide;</button>
+            <button class="operator green" value="-">-</button>
+            <button class="clear red" value="C">C</button>
+
+            <button class="operand yellow" value="7">7</button>
+            <button class="operand yellow" value="8">8</button>
+            <button class="operand yellow" value="9">9</button>
+            <button class="invisible">N</button>
+
+            <button class="operand yellow" value="4">4</button>
+            <button class="operand yellow" value="5">5</button>
+            <button class="operand yellow" value="6">6</button>
+            <button class="invisible">N</button>
+
+            <button class="operand yellow" value="1">1</button>
+            <button class="operand yellow" value="2">2</button>
+            <button class="operand yellow" value="3">3</button>
+            <button class="invisible">N</button>
+
+            <button class="hi blue" value="07734">hi!</button>
+            <button class="operand yellow" value="0">0</button>
+            <button class="operand blue" value=".">.</button>
+            <button class="result" id="equalButton" value="="></button>
+
+        </div>
+        <!-- END buttons input -->
     </div>
-    <!-- END container -->
+    <!-- END calculator -->
+</div>
+<!-- END container -->
 
-    <footer id="footer" class="text-center">
-        <div class="container">
-            Dictated but not read by
-            <a href="https://github.com/lbuthman" target="_blank">Luke Buthman</a>
-        </div>
-    </footer>
+<footer id="footer" class="text-center">
+    <div class="container">
+        Rad Calc by
+        <a href="https://github.com/lbuthman" target="_blank">Luke Buthman</a>
+    </div>
+</footer>
 </body>
 </html>
