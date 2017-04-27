@@ -2,7 +2,7 @@ body {
     /**background-color: #00E6FE;*/
     font-family: 'Shrikhand', cursive;
     background: url(https://ak2.picdn.net/shutterstock/videos/21587905/thumb/1.jpg);
-    max-width: auto;
+    width: auto;
     height: auto;
     background-size: cover;
 }
