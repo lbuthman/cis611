@@ -38,11 +38,12 @@ body {
 }
 
 #result {
-    width: 85%;
-    height: 65px;
+    width: 90%;
+    height: 55px;
     margin-left: auto;
     margin-right: auto;
     text-align: right;
+    padding-right: 6px;
     border: 2px solid #B4B39D;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
