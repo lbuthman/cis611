@@ -1,8 +1,11 @@
 $(document).ready(function() {
+
+    const MAX_SIZE = 13;
+
     //current number user is constructing
-    var numInput = 0;
+    var numInput = "0";
     //stored number between operations
-    var numStore = null;
+    var numStore = "0";
     var hasDecimal = false;
 
     /*Responds to button click*/
@@ -39,7 +42,11 @@ $(document).ready(function() {
     /*Handles the construction and validation of a number*/
     function handleOperand(operand) {
 
-        if (numInput === 0 && numInput.length === 1) {
+        if (numInput.length === MAX_SIZE) {
+            return;
+        }
+
+        if (numInput === "0" && numInput.length === 1) {
             numInput = operand;
         } else {
             numInput += operand;
@@ -66,6 +73,12 @@ $(document).ready(function() {
     /*Handle clear and discerns type of clear*/
     function handleClear(type) {
 
+        numInput = "0";
+
+        if (type === "AC") {
+            numStore = "0";
+        }
+        $("#result").text(numInput);
     }
 
     /*Handle returning result from Equals operation*/
