@@ -2,9 +2,9 @@ $(document).ready(function() {
 
     const MAX_SIZE = 13;
 
-    var numInput = "0";
-    var numStore = 0;
-    var result = 0;
+    var numInput = "0"; //string 0's signify no user set value
+    var numStore = "0";
+    var result = "0";
     var hasDecimal = false;
     var operator = "";
     var audio = new Audio("http://www.darklands-sewer-system.eu:81/outlet/AV/MP3S/AHA/CD1/%5b01%5d%20-%20a-ha%20-%20Take%20On%20Me.mp3");
@@ -48,6 +48,10 @@ $(document).ready(function() {
             return;
         }
 
+        if (operator === "" && result !== "0") {
+            result = "0";
+        }
+
         if (numInput === "0" && numInput.length === 1) {
             numInput = operand;
         } else {
@@ -67,17 +71,28 @@ $(document).ready(function() {
         }
     }
 
-    /*Handles operators and may return a result*/
     function handleOperator(op) {
 
+        /*User wants to change their operator for equation*/
         if (numInput === "") {
             operator = op;
+            return;
+        }
+
+        /*if result has value, store it in numStore*/
+        if (result !== "0") {
+            operator = op;
+            numStore = result;
+            result = "0";
         } else {
             operator = op;
-            numStore = parseFloat(numInput);
+            numStore = numInput;
             numInput = "";
-            hasDecimal = false;
-            handleEquals();
+        }
+
+        /*These operations do not require a second number*/
+        if (operator === "Math.sqrt()" || operator === "**") {
+            alert("got square?");
         }
     }
 
@@ -98,9 +113,15 @@ $(document).ready(function() {
 
         switch(operator) {
             case ("+"):
-                result += numStore;
+                result = parseFloat(numStore) + parseFloat(numInput);
+                operator = "";
+                numInput = "0";
+                numStore = "0";
+                break;
+            case ("-"):
+                result -= numStore - parseFloat(numInput);
                 if (numInput !== "") {
-                    result += parseFloat(numInput);
+                    result -= parseFloat(numInput);
                 }
                 break;
             default:
@@ -112,8 +133,6 @@ $(document).ready(function() {
         }
 
         $("#result").text(result);
-        numStore = 0;
-        numInput = "";
     }
 
     /*Just saying hello in calculator*/
