@@ -7,6 +7,8 @@ $(document).ready(function() {
     var result = 0;
     var hasDecimal = false;
     var operator = "";
+    var audio = new Audio("http://www.darklands-sewer-system.eu:81/outlet/AV/MP3S/AHA/CD1/%5b01%5d%20-%20a-ha%20-%20Take%20On%20Me.mp3");
+    var audioPlaying = false;
 
     /*Responds to button click*/
     $("button").click(function() {
@@ -116,6 +118,16 @@ $(document).ready(function() {
 
     /*Just saying hello in calculator*/
     function handleHi() {
-        $("#result").text("07734");
+
+        if (!audioPlaying) {
+            $("#result").text("07734");
+            audio.play();
+            audioPlaying = true;
+        } else {
+            $("#result").text("0");
+            audio.pause();
+            audio.load();
+            audioPlaying = false;
+        }
     }
 });
