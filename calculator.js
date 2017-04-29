@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     const MAX_SIZE = 13;
+    const MAX_VALUE = 9999999999999;
 
     var numInput = "0"; //string 0's signify no user set value
     var numStore = "0";
@@ -64,6 +65,10 @@ $(document).ready(function() {
     /*Handles adding and validating decimal input*/
     function handleDecimal() {
 
+        if (operator === "" && result !== "0") {
+            result = "0";
+        }
+
         if (!hasDecimal) {
             hasDecimal = true;
             numInput += ".";
@@ -84,6 +89,11 @@ $(document).ready(function() {
             operator = op;
             numStore = result;
             result = "0";
+        } else if (operator !== "") {
+            handleEquals();
+            operator = op;
+            numStore = result;
+            result = "0";
         } else {
             operator = op;
             numStore = numInput;
@@ -94,6 +104,8 @@ $(document).ready(function() {
         if (operator === "Math.sqrt()" || operator === "**") {
             alert("got square?");
         }
+
+        hasDecimal = false;
     }
 
     /*Handle clear and discerns type of clear*/
@@ -119,20 +131,38 @@ $(document).ready(function() {
                 numStore = "0";
                 break;
             case ("-"):
-                result -= numStore - parseFloat(numInput);
-                if (numInput !== "") {
-                    result -= parseFloat(numInput);
-                }
+                result = parseFloat(numStore) - parseFloat(numInput);
+                operator = "";
+                numInput = "0";
+                numStore = "0";
+                break;
+            case ("*"):
+                result = parseFloat(numStore) * parseFloat(numInput);
+                operator = "";
+                numInput = "0";
+                numStore = "0";
+                break;
+            case ("/"):
+                result = parseFloat(numStore) / parseFloat(numInput);
+                operator = "";
+                numInput = "0";
+                numStore = "0";
                 break;
             default:
 
         }
 
-        if (result.toString().length > MAX_SIZE) {
+        if (result > MAX_VALUE) {
             result = "OVERFLOW";
         }
 
-        $("#result").text(result);
+        if (result.toString().length > MAX_SIZE) {
+            $("#result").text(result.toPrecision(11));
+        } else {
+            $("#result").text(result);
+        }
+
+        hasDecimal = false;
     }
 
     /*Just saying hello in calculator*/
