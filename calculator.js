@@ -2,11 +2,11 @@ $(document).ready(function() {
 
     const MAX_SIZE = 13;
 
-    //current number user is constructing
     var numInput = "0";
-    //stored number between operations
-    var numStore = "0";
+    var numStore = 0;
+    var result = 0;
     var hasDecimal = false;
+    var operator = "";
 
     /*Responds to button click*/
     $("button").click(function() {
@@ -66,8 +66,17 @@ $(document).ready(function() {
     }
 
     /*Handles operators and may return a result*/
-    function handleOperator(operator) {
+    function handleOperator(op) {
 
+        if (numInput === "") {
+            operator = op;
+        } else {
+            operator = op;
+            numStore = parseFloat(numInput);
+            numInput = "";
+            hasDecimal = false;
+            handleEquals();
+        }
     }
 
     /*Handle clear and discerns type of clear*/
@@ -76,7 +85,8 @@ $(document).ready(function() {
         numInput = "0";
 
         if (type === "AC") {
-            numStore = "0";
+            numStore = 0;
+            result = 0;
         }
         $("#result").text(numInput);
     }
@@ -84,11 +94,28 @@ $(document).ready(function() {
     /*Handle returning result from Equals operation*/
     function handleEquals() {
 
+        switch(operator) {
+            case ("+"):
+                result += numStore;
+                if (numInput !== "") {
+                    result += parseFloat(numInput);
+                }
+                break;
+            default:
+
+        }
+
+        if (result.toString().length > MAX_SIZE) {
+            result = "OVERFLOW";
+        }
+
+        $("#result").text(result);
+        numStore = 0;
+        numInput = "";
     }
 
-    /*Handles audio and animation from hitting hi button*/
+    /*Just saying hello in calculator*/
     function handleHi() {
-
+        $("#result").text("07734");
     }
-
 });
