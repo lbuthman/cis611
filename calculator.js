@@ -120,11 +120,15 @@ $(document).ready(function() {
     function handleHi() {
 
         if (!audioPlaying) {
-            $("#result").text("07734");
+            $("#calculator").css({"transform": "rotate(180deg)",
+                "transition-duration": "5s"});
+            $("#result").text("0773H");
             audio.play();
             audioPlaying = true;
         } else {
             $("#result").text("0");
+            $("#calculator").css({"transform": "rotate(0deg)",
+                "transition-duration": "2s"});
             audio.pause();
             audio.load();
             audioPlaying = false;
