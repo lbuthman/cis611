@@ -10,3 +10,11 @@ How to HTML/CSS
 8. reminder on the use of multiple classes
 
 How to JS/JQuery
+
+1. load an play and mp3 from the web
+2. syntax for switch statement
+3. the use of toPrecision to limit output
+4. removing insignificant digits from number by converting to String
+5. syntax to parse floating data type
+6. the use of .css to use css effects with jQuery and JS
+7. how to turn an HTML element upside down over time with transition and time-duration
