@@ -23,6 +23,7 @@ $(document).ready(function() {
                 handleOperand(value);
                 break;
             case "decimal":
+                $(this).css({"background-color": "#C0C0C0"});
                 handleDecimal();
                 break;
             case "operator":
@@ -101,11 +102,12 @@ $(document).ready(function() {
         }
 
         /*These operations do not require a second number*/
-        if (operator === "Math.sqrt()" || operator === "**") {
-            alert("got square?");
+        if (operator === "**" || operator === "Math.sqrt()") {
+            handleEquals();
         }
 
         hasDecimal = false;
+        $(".blue").css({"background-color": "#00E6FE"});
     }
 
     /*Handle clear and discerns type of clear*/
@@ -118,6 +120,9 @@ $(document).ready(function() {
             result = 0;
         }
         $("#result").text(numInput);
+
+        hasDecimal = false;
+        $(".blue").css({"background-color": "#00E6FE"});
     }
 
     /*Handle returning result from Equals operation*/
@@ -148,6 +153,18 @@ $(document).ready(function() {
                 numInput = "0";
                 numStore = "0";
                 break;
+            case ("**"):
+                result = numStore * numStore;
+                operator = "";
+                numInput = "0";
+                numStore = "0";
+                break;
+            case ("Math.sqrt()"):
+                result = Math.sqrt(numStore);
+                operator = "";
+                numInput = "0";
+                numStore = "0";
+                break;
             default:
 
         }
@@ -157,12 +174,13 @@ $(document).ready(function() {
         }
 
         if (result.toString().length > MAX_SIZE) {
-            $("#result").text(result.toPrecision(11));
+            $("#result").text(result.toPrecision(11).toString());
         } else {
-            $("#result").text(result);
+            $("#result").text(result.toString());
         }
 
         hasDecimal = false;
+        $(".blue").css({"background-color": "#00E6FE"});
     }
 
     /*Just saying hello in calculator*/
