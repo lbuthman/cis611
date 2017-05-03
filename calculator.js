@@ -131,50 +131,36 @@ $(document).ready(function() {
         switch(operator) {
             case ("+"):
                 result = parseFloat(numStore) + parseFloat(numInput);
-                operator = "";
-                numInput = "0";
-                numStore = "0";
                 break;
             case ("-"):
                 result = parseFloat(numStore) - parseFloat(numInput);
-                operator = "";
-                numInput = "0";
-                numStore = "0";
                 break;
             case ("*"):
                 result = parseFloat(numStore) * parseFloat(numInput);
-                operator = "";
-                numInput = "0";
-                numStore = "0";
                 break;
             case ("/"):
                 result = parseFloat(numStore) / parseFloat(numInput);
-                operator = "";
-                numInput = "0";
-                numStore = "0";
                 break;
             case ("**"):
                 result = numStore * numStore;
-                operator = "";
-                numInput = "0";
-                numStore = "0";
                 break;
             case ("Math.sqrt()"):
                 result = Math.sqrt(numStore);
-                operator = "";
-                numInput = "0";
-                numStore = "0";
                 break;
             default:
-
+                result = "ERROR";
         }
+
+        operator = "";
+        numInput = "0";
+        numStore = "0";
 
         if (result > MAX_VALUE) {
             result = "OVERFLOW";
         }
 
         if (result.toString().length > MAX_SIZE) {
-            $("#result").text(result.toPrecision(11).toString());
+            $("#result").text(result.toPrecision(11).replace(/\.?0+$/,""));
         } else {
             $("#result").text(result.toString());
         }
